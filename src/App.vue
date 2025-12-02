@@ -5,7 +5,15 @@ const handleClick = () => {
 </script>
 
 <template>
-    <h1 class="text-2xl font-semibold text-red-600" @click="handleClick">You did it!</h1>
+    <div class="flex items-center h-screen w-screen bg-slate-700 justify-center">
+        <ButtonPrimary 
+            :onClick="handleClick" 
+            type="primary"
+            size="small"
+        >
+            Hello World
+        </ButtonPrimary>
+    </div>
 </template>
 
 <style scoped></style>

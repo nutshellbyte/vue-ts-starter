@@ -16,9 +16,9 @@ export default defineConfig({
         Components({
             directoryAsNamespace: true,
             dirs: ['src/components/shared', 'src/components/features'],
-            deep: true,
-            dts: true,
-            extensions: ['vue'],
+            extensions: ['vue', 'md'],
+            include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+            dts: 'src/components.d.ts',
         }),
     ],
     resolve: {
