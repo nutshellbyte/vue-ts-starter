@@ -11,12 +11,15 @@
         "build": "run-p type-check \"build-only {@}\" --",
         "preview": "vite preview",
         "build-only": "vite build",
-        "type-check": "vue-tsc --build",
-        "lint": "eslint . --fix --cache",
-        "format": "prettier --write '**/*.{js,ts,vue,css,scss,html,json,md}'",
-        "lint-format": "npm run lint && npm run format",
-        "prepare": "husky install"
+        "type-check": "vue-tsc --build"
     },
+    "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
     "dependencies": {
         "@tailwindcss/vite": "^4.1.17",
         "pinia": "^3.0.4",
