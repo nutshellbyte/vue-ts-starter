@@ -14,7 +14,8 @@
         "type-check": "vue-tsc --build",
         "lint": "eslint . --fix --cache",
         "format": "prettier --write '**/*.{js,ts,vue,css,scss,html,json,md}'",
-        "lint-format": "npm run lint && npm run format"
+        "lint-format": "npm run lint && npm run format",
+        "prepare": "husky install"
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.1.17",
@@ -34,7 +35,7 @@
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-prettier": "^5.5.4",
         "eslint-plugin-vue": "~10.5.1",
-        "husky": "^9.1.7",
+        "husky": "^8.0.0",
         "jiti": "^2.6.1",
         "npm-run-all2": "^8.0.4",
         "prettier": "^3.7.3",
