@@ -1,7 +1,7 @@
-export interface ButtonProps {
+export type ButtonProps =  {
     type: 'primary' | 'warning' | 'danger';
     size: 'small' | 'medium' | 'large';
     disabled?: boolean;
-    loading?: boolean;
-    onClick: () => void;
+    loading?: boolean
+    onClick?: () => void;
 }

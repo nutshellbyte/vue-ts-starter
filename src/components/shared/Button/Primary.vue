@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import type { ButtonProps } from '@/types/components/button';
 
-defineProps<ButtonProps>();
+const props = withDefaults(defineProps<ButtonProps>(), {
+    disabled: false,
+    loading: false
+});
 </script>
 
 <template>
     <button
-        :disabled="disabled"
-        @click="onClick"
-        class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 disabled:bg-blue-300 disabled:cursor-not-allowed transition-colors">
+        :disabled="props.disabled"
+        @click="props.onClick"
+        class="bg-slate-600 px-6 py-2.5 rounded-2xl text-white font-semibold flex items-center justify-center shadow-2xl cursor-pointer">
         <slot />
     </button>
 </template>

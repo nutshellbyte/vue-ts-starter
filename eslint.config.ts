@@ -10,6 +10,7 @@ export default defineConfigWithVueTs(
         rules: {
             quotes: ['error', 'single'],
             semi: ['error', 'always'],
+            indent: ['error', 4, { SwitchCase: 1 }],
             'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
             'vue/html-indent': ['error', 4],
             'vue/script-indent': ['error', 4, { baseIndent: 0 }],

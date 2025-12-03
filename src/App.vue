@@ -1,19 +1,20 @@
 <script setup lang="ts">
-const handleClick = () => {
-    console.log('asdsad');
-};
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+import DefaultLayout from '@/layouts/Default.vue';
+
+const route = useRoute();
+
+const layout = computed(() => {
+    return route.meta.layout || DefaultLayout;
+});
 </script>
 
 <template>
-    <div class="flex items-center h-screen w-screen bg-slate-700 justify-center">
-        <ButtonPrimary 
-            :onClick="handleClick" 
-            type="primary"
-            size="small"
-        >
-            Hello World
-        </ButtonPrimary>
+    <div id="app">
+        <component :is="layout">
+            <RouterView />
+        </component>
     </div>
 </template>
-
-<style scoped></style>
